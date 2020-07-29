@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+main(int argc, char* argv[]) {
+	
+	FILE *file = fopen(argv[1], "r");
+	char oneline[100];
+	int linecount = 0;
+
+	if (file != NULL) // 파일이 열리는지 확인
+	{
+		printf("파일 오픈 성공!!\n");
+		
+		while (1)	// 한 줄 씩 받아와서 라인카운트.
+		{
+			if(fgets(oneline, 100, file) == NULL)
+			{
+				printf("이 파일은 %d 줄 입니다.",linecount);
+				fclose(file);
+				break;
+			}
+			printf("%s",oneline);
+			linecount++;
+		}
+	}
+
+	file = fopen(argv[1], "r");
+	char[linecount][100] array;
+
+	else
+	{
+		printf("파일 오픈 실패!!\n");
+		
+	}
+
+	fclose(file);
+}
